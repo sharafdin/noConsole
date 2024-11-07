@@ -2,7 +2,7 @@
   "name": "noconsole",
   "displayName": "noConsole",
   "description": "A VS Code extension that removes all console.log statements from your code with ease, helping you maintain a cleaner and more professional codebase.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "Sharafdin",
   "author": {
     "name": "Mr Sharafdin",
