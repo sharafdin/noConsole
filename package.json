@@ -1,0 +1,86 @@
+{
+  "name": "noconsole",
+  "displayName": "noConsole",
+  "description": "A VS Code extension that removes all console.log statements from your code with ease, helping you maintain a cleaner and more professional codebase.",
+  "version": "0.0.1",
+  "publisher": "Sharafdin",
+  "author": {
+    "name": "Mr Sharafdin",
+    "email": "isesharafdin@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sharafdin/noConsole"
+  },
+  "keywords": [
+    "console",
+    "log",
+    "console.log",
+    "clean",
+    "remove",
+    "logs",
+    "debug"
+  ],
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "license": "MIT",
+  "categories": [
+    "Linters"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "noconsole.removeConsole",
+        "title": "Remove Console"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "noconsole.removeConsole",
+        "key": "ctrl+shift+l",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "noconsole.removeConsole",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.95.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
+    "@mocha/docdash": "^4.0.1",
+    "sinon": "^19.0.2",
+    "vite-plugin-commonjs": "^0.10.3",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "yorkie": "^2.0.0"
+  }
+}
